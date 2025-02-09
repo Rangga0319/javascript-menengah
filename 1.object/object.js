@@ -39,10 +39,6 @@ smartphone["official-price"] = 6_000_000;
 console.log(smartphone); // akan tampil : { brand: 'Samsung', 'official-price': 6000000 }
 // value dari property official-price sudah di ubah
 
-// cara agar menghapus property / key dalam object di atas
-delete smartphone.price;
-console.log(smartphone); // akan tampil : { brand: 'Samsung', 'official-price': 6000000 }
-// property price sudah di hapus
 //______________________________________________________________________________________________________________
 console.log("___________________________________________________________________________________________________")
 // membuat object baru di dalam object

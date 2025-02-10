@@ -59,3 +59,50 @@ for (let i = 0; i < AllMenu.length; i++) {
 //    dari array allMenu yang berisi property name [i] yang didalamnya berarti index
 // 8. dan AllMenu[i].price artinya callback function akan memanggil property price dari array allMenu
 // 9. hasil yang tampil akan sama persisi dengan forEach()
+
+console.log("_______________________________________________________________________________________________________")
+
+console.log("akan menampilkan pengguna dengan umur di atas 18 tahun"); // program yang di inginkam
+
+const semuaPengguna = [ // membuat array semuaPengguna yang berisi object ini dinamakan array object
+
+    pengguna1 = {
+        nama : "emilia", 
+        umur : "18", 
+    },
+    pengguna2 = {
+        nama : "crush",
+        umur : "19", // berumur 19 tahun
+    },
+    pengguna3 = {
+        nama : "anastasia",
+        umur : "21", // berumur 21 tahun
+    },
+    pengguna4 = {
+        nama : "priscilla",
+        umur : "20", // berumur 20 tahun
+    },
+    pengguna5 = {
+        nama : "felt",
+        umur : "15",
+    }
+]
+    const diatas18 = semuaPengguna.filter((pengguna) => pengguna.umur > 18);
+    // membuat variabel diatas18 yang berisi semuaPengguna yang di filter
+    // yang menggunakan parameter (pengguna)
+    // dimana semuaPengguna di filter dengan kondisi pengguna.umur > 18
+
+    diatas18.forEach((pengguna, index) => { // forEach() melakukan perulangan terhadap array diatas18
+                                            // ia berisi 2 parameter yaitu pengguna dan index
+
+      console.log(`${index + 1}. nama : ${pengguna.nama} | umur : ${pengguna.umur}`);  
+    }) // menggunakan template literal yaitu gabungan dari string dan variabel
+       // dimana index + 1 artinya index akan di tambah 1 karena index dimulai dari 0
+       // dan pengguna.nama artinya callback function akan memanggil property nama
+       // dan pengguna.umur artinya callback function akan memanggil property umur
+
+
+// hasil yang tampil :
+// 1. nama : crush | umur : 19
+// 2. nama : anastasia | umur : 21
+// 3. nama : priscilla | umur : 20

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+//______________________________________________________________________________________________________________________
+class Pengguna {                                     
+    firstName = "";                                   
+    lastName = "";                                              
+    username = "";                                    
+    age = 0;                                        
+    #password = "Kig78RTYU97i9jLfsg";                 
+
+    constructor(ToFirstname, ToLastname, ToUsername, ToAge){         
+                                                                      
+        this.firstName = ToFirstname;                   
+        this.lastName = ToLastname
+        this.username = ToUsername;
+        this.age = ToAge;
+    }
+
+//______________________________________________________________________________________________________________________
+    #getFullname(){                                                                
+        return `${this.firstName} ${this.lastName}`;                              
+    }
+    greeting(){                                                                     
+        return `Selamat Datang Kembali ${this.#getFullname()}`;                    
+    }                                                           
+
+}
+//______________________________________________________________________________________________________________________
+// disini akan membuat turunan dari class Pengguna menggunakan class baru yaitu class Admin
+// Pengguna merupakan parent dan Admin merupakan child
+class Admin extends Pengguna {
+// disini akan membuat property class yang baru nantinya akan di gabungkan dengan class Pengguna
+
+devision = "";
+
+// constructor ini di buat untuk mengisi property yang ada di dalam class Admin
+constructor(ToFirstname, ToLastname, ToUsername, ToAge, ToDevision){
+    
+    super(ToFirstname, ToLastname, ToUsername, ToAge); 
+    // disini menggunakan super() untuk mengakses property yang ada di class Pengguna
+    
+    this.devision = ToDevision; 
+    // disini menggunakan this. untuk mengakses property devision nantinya
+
+    
+// ketika membuat Admin dimana yang ada di pengguna juga ada di Admin dan ada tambahan
+// namun pada Admin mendeklarasikan constructor baru dan hanya membuat beberapa property saja
+// dengan tetap membungkus parameter class Pengguna sebelumnya yaitu ToFirstname, ToLastname, ToUsername, dan ToAge
+// pada bagian bawah property dalam class Admin dan secara otomatis menggunakan kembali jadi diperlukannya super() 
+// property yang ada di class Pengguna, dan apapun yang di tambahkan pada class Admin 
+// tidak akan berpegaruh pada class Pengguna
+}
+//______________________________________________________________________________________________________________________
+greetingAdmin(){
+    return `Selamat Datang Kembali ${this.devision}`;
+};
+
+checkAccess(){
+    if(this.devision === "System Administrator"){
+        return true;
+    };
+};
+};
+
+//______________________________________________________________________________________________________________________
+
+const user = new Pengguna("Alvina", "Ramadani", "Alvina08", 20);
+// ini adalah object baru yang di buat menggunakan class Pengguna yang nantinya akan menjadi turunan dari class Admin
+
+const admin = new Admin ("Rangga", "Pratama", "Rangga08", 22, "System Administrator");
+// disini telah di buat class Admin yang mana masing-masing property ini telah di bungkus
+// dengan parameter constructor dalam class Admin yang mana telah di jelaskan class Admin turunan dari Class Pengguna
+
+// dan jika property Admin di ubah tidak akan berpegaruh pada property pengguna
+// namun jika property Pengguna di ubah maka juga akan berpegaruh pada property Admin
+//_____________________________________________________________________________________________________________________
+
+console.log(user.greeting());                // akan menampilkan Selamat Datang Kembali Alvina Ramadani
+console.log(admin.greetingAdmin());          // akan menampilkan Selamat Datang Kembali System Administrator
+
+</script>
+
+</body>
+</html>

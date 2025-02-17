@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+class Pengguna {                                     
+    firstName = "";                                   
+    lastName = "";                                              
+    username = "";                                    
+    age = 0;                                        
+    #password = "Kig78RTYU97i9jLfsg";                 
+
+    constructor(ToFirstname, ToLastname, ToUsername, ToAge){         
+                                                                      
+        this.firstName = ToFirstname;                   
+        this.lastName = ToLastname
+        this.username = ToUsername;
+        this.age = ToAge;
+    }
+
+
+    #getFullname(){                                                                
+        return `${this.firstName} ${this.lastName}`;                              
+    }
+    greeting(){                                                                     
+        return `Selamat Datang Kembali ${this.#getFullname()}`;                    
+    }                                                                             
+
+}
+const user = new Pengguna("Alvina", "Ramadani", "Alvina08", 20);
+
+// setiap hal dalam javascript baik itu string, number, class, apaoun itu adalah sebuah object
+
+// semua data dalam javascript adalah sebuah object
+
+// saat membuat object baru dari class Pengguna secara lansung kita telah membuat sebuah instance
+// terdapat prototype dalam sebuah instance yaitu dia akan terbuat otomatis dalam javascript saat membuat class
+// dan prototype disebut juga sebagai template dimana object tersebut berasal / dibuat
+// akan otomatis di buat oleh javascript
+// dan juga sebuah prototype juga sebuah object
+
+
+console.log(user.greeting()); 
+
+</script>
+
+</body>
+</html>
